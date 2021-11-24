@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 app.use(logger("dev"));
 
 app.use(cors({
-  origin: ['https://customer-care10.herokuapp.com//', 'http://localhost:3005/'],
+  origin: ['https://customer-care10.herokuapp.com//', 'http://localhost:5001/'],
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
