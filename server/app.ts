@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 app.use(logger("dev"));
 
 app.use(cors({
-  origin: ['https://expresscustomerapp.herokuapp.com/', 'http://localhost:3005/'],
+  origin: ['https://customer-care10.herokuapp.com//', 'http://localhost:3005/'],
   methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
@@ -51,7 +51,7 @@ app.use(function (
 });
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
   // tslint:disable-next-line:no-console
