@@ -1,8 +1,9 @@
 import fs from 'fs';
-import User from './user';
-import {ErrorInt} from './inteface';
+import {User} from './user';
+import {ErrorInt,dbInt} from './inteface';
 
 const db = process.env.NODE_ENV == "test" ? "testdb.json" : "database.json";
+
 
 const ErrorHandler = (status:number, message:string, data:object):ErrorInt =>{
     return { status, message, data, success: false }
@@ -30,7 +31,7 @@ function getUser(email: string): User {
 }
 
 function addUser(newUser: User): User {
-    if(!newUser.fullname) throw (ErrorHandler(400, "User  full Name is required", {}));
+    if(!newUser.fullname) throw (ErrorHandler(400, "User full Name is required", {}));
     if(newUser.fullname.split(" ").length < 2) throw (ErrorHandler(400, "first name and last name required in full name", {}));
     if(!newUser.email) throw (ErrorHandler(400, "User mail is required", {})); 
     if(!validateEmail(newUser.email)) throw (ErrorHandler(400, "invalid email", {})); 
@@ -55,6 +56,13 @@ function addUser(newUser: User): User {
     users.push(newUser);
     fs.writeFileSync(__dirname+'/../'+db, JSON.stringify(users));
     return newUser;
+}
+
+
+function register (newUser: dbInt): dbInt {
+
+    
+    return newUser
 }
 
 function updateUser(newUser: User): User {

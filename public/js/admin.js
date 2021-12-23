@@ -1,9 +1,9 @@
 async function callApi(path, method, body) {
     if(method === "GET"){
-        const response = await fetch(`https://customer-care10.herokuapp.com/${path}`);
+        const response = await fetch(`http://localhost:5001/${path}`);
         return await response.json();
     } else {
-        const response = await fetch(`https://customer-care10.herokuapp.com/${path}`, {
+        const response = await fetch(`http://localhost:5001/${path}`, {
             method: method,
             body: JSON.stringify(body),
             headers: {

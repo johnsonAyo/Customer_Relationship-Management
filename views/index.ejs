@@ -7,8 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style/index.css">
-  <link rel="shortcut icon" href="https://images.unsplash.com/photo-1579047917338-a6a69144fe63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y3VzdG9tZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60">
+  <link rel="stylesheet" href="/style/index.css">
+  <link rel="shortcut icon"
+    href="https://images.unsplash.com/photo-1579047917338-a6a69144fe63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y3VzdG9tZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,18 +33,16 @@
   <meta property="og:title" content="Customer_Relationship-Management">
   <meta property="og:description"
     content="This is a single page Application which displays ten diffferent users details .">
-  <meta property="og:image"
-    content="">
+  <meta property="og:image" content="">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="https://customer-care10.herokuapp.com/"">
-  <meta property="twitter:url" content="https://customer-care10.herokuapp.com/">
+  <meta property=" twitter:url" content="https://customer-care10.herokuapp.com/">
   <meta name="twitter:title" content="Customer Relationship-Management">
   <meta name="twitter:description"
     content="This is a single page Application which displays ten diffferent startwars character with specific attributes which includes name, height and gender.">
-  <meta name="twitter:image"
-    content="Customer Relationship-Management">
+  <meta name="twitter:image" content="Customer Relationship-Management">
 
   <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 </head>
@@ -69,23 +68,26 @@
 
   <section>
     <div class="container-fluid  p-5">
-       <h1 class="dispaly-3 text-center" > Customer Relationship-Management System </h1>
-        <a href="/admin">  <h1 class="dispaly-3 text-center" > EDIT CUSTOMER DETAILS </h1></a>
+      <h1 class="dispaly-3 text-center"> Customer Relationship-Management System </h1>
+      <a href="/users/admin">
+        <h1 class="dispaly-3 text-center"> EDIT CUSTOMER DETAILS </h1>
+      </a>
       <div class="row" id="lists">
         <% users.forEach((user, i) => { %>
         <div class="col-sm-4"><br>
           <div class="card">
             <div class="card-body text-center">
-                       <% if(i + 1 > 38) i = 0 %>
-              <img src="images/male<%= i+1 %>.png" style="height:300px">
+              <% if(i + 1 > 38) i = 0 %>
+              <img src="/images/male<%= i+1 %>.png" style="height:300px">
             </div>
-            <button type="button" class="btn btn-dark show-data" data-toggle="modal" data-target="<%= '#'+user.email.split('@')[0] %>">
+            <button type="button" class="btn btn-dark show-data" data-toggle="modal"
+              data-target="<%= '#'+user.email.split('@')[0] %>">
               <%= user.fullname %>
             </button>
           </div>
           <section>
-            <div class="modal fade" id="<%= user.email.split('@')[0] %>" tabindex="-1" role="dialog" aria-labelledby="tLabel"
-              aria-hidden="true">
+            <div class="modal fade" id="<%= user.email.split('@')[0] %>" tabindex="-1" role="dialog"
+              aria-labelledby="tLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -103,7 +105,7 @@
                         <p> Email : <%= user.email %> </p>
                         <p> Address: <%= user.address %> </p>
                         <p> Notes: <%= user.notes %> </p>
-                  </div>
+                      </div>
                     </p>
                   </div>
                   <div class="modal-footer">
@@ -122,10 +124,13 @@
 
 
   <!-- Modal -->
+  <div class="text-center">
+    <a href="/users/logout" class="btn btn-secondary">Logout</a>
+  </div>
   <footer>
     <div class="footer-copyright text-center py-3">© 2021 Copyright:
     </div>
-  </footer> 
+  </footer>
 </body>
 <script src="js/index.js"> </script>
 
